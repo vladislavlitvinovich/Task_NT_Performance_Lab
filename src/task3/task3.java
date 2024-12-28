@@ -20,14 +20,14 @@ public class task3 {
         }.getType();
         Type valuesType = new TypeToken<Map<String, List<Map<String, Object>>>>() {
         }.getType();
-        try (FileReader testsReader = new FileReader("src/task3/tests.json");
-             FileReader valuesReader = new FileReader("src/task3/values.json")) {
+        try (FileReader testsReader = new FileReader(args[0]);
+             FileReader valuesReader = new FileReader(args[1])) {
             Map<String, List<Map<String, Object>>> root = gson.fromJson(testsReader, rootType);
             List<Map<String, Object>> tests = root.get("tests");
             Map<String, List<Map<String, Object>>> valuesRoot = gson.fromJson(valuesReader, valuesType);
             List<Map<String, Object>> values = valuesRoot.get("values");
             updateValues(tests, values);
-            try (FileWriter writer = new FileWriter("src/task3/report.json")) {
+            try (FileWriter writer = new FileWriter("report.json")) {
                 gson.toJson(root, writer);
             }
         } catch (IOException e) {
@@ -43,6 +43,7 @@ public class task3 {
             for (Map<String, Object> value : values) {
                 if (node.get("id").equals(value.get("id"))) {
                     node.put("value", value.get("value"));
+                    break;
                 }
             }
         }
