@@ -7,7 +7,7 @@ import java.io.IOException;
 public class task2 {
     public static void main(String[] args) throws IOException {
         BufferedReader circle = new BufferedReader(new FileReader("src\\task2\\circle.txt"));
-        BufferedReader point = new BufferedReader(new FileReader("src\\task2\\\\point.txt"));
+        BufferedReader point = new BufferedReader(new FileReader("src\\task2\\point.txt"));
         String buff = circle.readLine();
         int circleX = Integer.parseInt(buff.split(" ")[0]);
         int circleY = Integer.parseInt(buff.split(" ")[1]);
