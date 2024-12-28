@@ -30,7 +30,6 @@ public class task3 {
             try (FileWriter writer = new FileWriter("src/task3/report.json")) {
                 gson.toJson(root, writer);
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
