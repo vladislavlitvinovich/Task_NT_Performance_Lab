@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class task1 {
     public static void main(String[] args) {
-        String[] str = (new Scanner(System.in).nextLine()).split(" ");
-        System.out.println(CircleArray(Integer.parseInt(str[0]), Integer.parseInt(str[1])));
+        //String[] str = (new Scanner(System.in).nextLine()).split(" ");
+        System.out.println(CircleArray(Integer.parseInt(args[0]), Integer.parseInt(args[1])));
     }
 
     public static String CircleArray(int n, int m) {
